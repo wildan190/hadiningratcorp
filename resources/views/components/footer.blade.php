@@ -15,7 +15,7 @@
                     <li><a href="{{ route('home') }}" class="text-gray-300 hover:text-white transition">Beranda</a></li>
                     <li><a href="{{ route('home') }}#services" class="text-gray-300 hover:text-white transition">Layanan</a></li>
                     <li><a href="{{ route('about') }}" class="text-gray-300 hover:text-white transition">Tentang Kami</a></li>
-                    <li><a href="#contact" class="text-gray-300 hover:text-white transition">Kontak</a></li>
+                    <li><a href="{{ route('contact') }}" class="text-gray-300 hover:text-white transition">Kontak</a></li>
                 </ul>
             </div>
 
