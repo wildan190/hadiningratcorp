@@ -16,7 +16,7 @@
                 <div x-show="servicesOpen" x-cloak x-transition.origin.top.left
                      class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg z-50 ring-1 ring-black ring-opacity-5">
                     <div class="py-1">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-orange transition">Bore Pile Hydraulic</a>
+                        <a href="{{ route('bore-pile-hydraulic')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-orange transition">Bore Pile Hydraulic</a>
                         <a href="{{ route('bore-pile-manual') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-orange transition">Bore Pile Manual</a>
                         <a href="{{ route('bore-pile-mini-crane') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-orange transition">Bore Pile Mini Crane</a>
                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-orange transition">Area Layanan</a>

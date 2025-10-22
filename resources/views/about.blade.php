@@ -27,7 +27,7 @@
                     <p class="text-sm text-brand-orange font-poppins">Founder</p>
                 </div>
                 <div class="ml-8">
-                    <img src="https://i.ibb.co/L8g3wZp/profile.png" alt="Achmad Fikri Ibnu Hadi" class="w-40 h-40 rounded-full object-cover border-4 border-brand-orange shadow-md">
+                    <img src="{{ asset('assets/img/about/Fikri-scaled.jpeg') }}" alt="Achmad Fikri Ibnu Hadi" class="w-40 h-40 rounded-full object-cover border-4 border-brand-orange shadow-md">
                 </div>
             </section>
 

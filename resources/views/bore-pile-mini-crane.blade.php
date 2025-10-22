@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div>
-                <img src="https://via.placeholder.com/800x600.png/1E2748/FFFFFF?text=Ilustrasi+Bore+Pile" alt="Ilustrasi Bore Pile Mesin Mini Crane" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                <img src="{{ asset('assets/img/minicrane/minicrane3.webp')}}" alt="Ilustrasi Bore Pile Mesin Mini Crane" class="rounded-lg shadow-xl w-full h-auto object-cover">
             </div>
         </div>
     </div>
@@ -57,17 +57,17 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 border-b-4 border-brand-orange">
-                <img src="https://via.placeholder.com/600x400.png/ED6D31/FFFFFF?text=Mini+Crane" alt="Layanan Bore Pile Mini Crane" class="w-full h-48 object-cover rounded-md mb-6">
+                <img src="{{ asset('assets/img/minicrane/minicrane1.webp') }}" alt="Layanan Bore Pile Mini Crane" class="w-full h-48 object-cover rounded-md mb-6">
                 <h3 class="text-2xl font-bold font-title text-brand-blue mb-3">Bore Pile Mini Crane</h3>
                 <p class="text-gray-600">Solusi ideal untuk area perumahan dan lahan terbatas dengan minim getaran. Cocok untuk proyek di kawasan padat penduduk.</p>
             </div>
             <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 border-b-4 border-brand-blue">
-                <img src="https://via.placeholder.com/600x400.png/1E2748/FFFFFF?text=Gawangan" alt="Layanan Bore Pile Gawangan" class="w-full h-48 object-cover rounded-md mb-6">
+                <img src="{{ asset('assets/img/minicrane/minicrane2.webp') }}" alt="Layanan Bore Pile Gawangan" class="w-full h-48 object-cover rounded-md mb-6">
                 <h3 class="text-2xl font-bold font-title text-brand-blue mb-3">Bore Pile Gawangan</h3>
                 <p class="text-gray-600">Mampu membuat lubang dengan diameter lebih besar. Ideal untuk area pedalaman dan lahan sempit dengan sistem pengaman.</p>
             </div>
             <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 border-b-4 border-gray-700">
-                <img src="https://via.placeholder.com/600x400.png/CCCCCC/000000?text=Survei" alt="Layanan Konsultasi & Survei" class="w-full h-48 object-cover rounded-md mb-6">
+                <img src="{{ asset('assets/img/minicrane/minicrane3.webp') }}" alt="Layanan Konsultasi & Survei" class="w-full h-48 object-cover rounded-md mb-6">
                 <h3 class="text-2xl font-bold font-title text-brand-blue mb-3">Konsultasi & Survei</h3>
                 <p class="text-gray-600">Tim ahli kami memberikan rekomendasi teknis berdasarkan kondisi tanah dan kebutuhan bangunan Anda.</p>
             </div>
@@ -116,7 +116,7 @@
     <div class="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
              <div class="order-2 lg:order-1">
-                <img src="https://via.placeholder.com/800x700.png/1E2748/FFFFFF?text=Keunggulan+Kami" alt="Keunggulan Bore Pile Mini Crane" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                <img src="{{ asset('assets/img/minicrane/minicrane4.webp') }}" alt="Keunggulan Bore Pile Mini Crane" class="rounded-lg shadow-xl w-full h-auto object-cover">
             </div>
             <div class="text-left order-1 lg:order-2">
                 <h2 class="text-3xl lg:text-4xl font-bold font-title text-brand-blue mb-6">Keunggulan Metode Mini Crane</h2>
@@ -145,21 +145,27 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                <img src="https://via.placeholder.com/800x600.png/ED6D31/FFFFFF?text=Rumah+Tinggal" class="w-full h-56 object-cover">
+                <div class="w-full h-56 flex items-center justify-center bg-brand-orange">
+                    <i class="fas fa-house-user text-6xl text-white"></i>
+                </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold font-title text-brand-blue">Rumah Tinggal</h3>
                     <p class="text-gray-600 mt-2">Solusi pondasi kokoh untuk rumah tinggal di berbagai kondisi tanah, termasuk area rawan longsor atau tanah lunak.</p>
                 </div>
             </div>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                <img src="https://via.placeholder.com/800x600.png/1E2748/FFFFFF?text=Gedung+Bertingkat" class="w-full h-56 object-cover">
+                <div class="w-full h-56 flex items-center justify-center bg-brand-blue">
+                    <i class="fas fa-building text-6xl text-white"></i>
+                </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold font-title text-brand-blue">Gedung Bertingkat</h3>
                     <p class="text-gray-600 mt-2">Pondasi kuat untuk gedung dengan beban struktur berat yang membutuhkan daya dukung optimal.</p>
                 </div>
             </div>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                <img src="https://via.placeholder.com/800x600.png/CCCCCC/000000?text=Infrastruktur" class="w-full h-56 object-cover">
+                <div class="w-full h-56 flex items-center justify-center bg-gray-400">
+                    <i class="fas fa-road-bridge text-6xl text-white"></i>
+                </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold font-title text-brand-blue">Infrastruktur</h3>
                     <p class="text-gray-600 mt-2">Mendukung proyek infrastruktur seperti jembatan, tanggul, atau menara di area dengan akses terbatas.</p>
