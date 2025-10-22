@@ -66,6 +66,35 @@
                 </div>
             </div>
 
+            <!-- Puspita Asri Project Card -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 flex flex-col">
+                <div class="aspect-[4/3]">
+                    <img src="{{ asset('assets/img/proyek/puspitaasri.webp') }}" class="w-full h-full object-cover" alt="Proyek Perumahan Cluster “Puspita Asri”">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">Proyek Perumahan Cluster “Puspita Asri”</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Penyediaan pondasi untuk klaster perumahan modern. Fokus pada efisiensi dan biaya yang kompetitif tanpa mengorbankan kualitas dan kecepatan.</p>
+                    <ul class="text-sm text-gray-700">
+                        <li class="flex items-center mb-2">
+                            <span class="font-semibold w-28">Lokasi</span>
+                            <span class="text-right flex-1">: Semarang</span>
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <span class="font-semibold w-28">Jumlah Titik</span>
+                            <span class="text-right flex-1">: 100</span>
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <span class="font-semibold w-28">Diameter</span>
+                            <span class="text-right flex-1">: Ø400 mm</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="font-semibold w-28">Kedalaman</span>
+                            <span class="text-right flex-1">: 4 meter</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- Cloud Core Project Card -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 flex flex-col">
                 <div class="aspect-[4/3]">
