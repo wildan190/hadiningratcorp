@@ -6,7 +6,7 @@
             <p class="text-gray-600 leading-relaxed">Hadiwijaya Bore Pile adalah kontraktor spesialis pondasi bore pile dan strauss pile yang telah berpengalaman lebih dari 10 tahun. Kami berkomitmen untuk memberikan solusi pondasi yang kokoh, efisien, dan hemat biaya untuk berbagai jenis proyek, mulai dari perumahan sederhana hingga bangunan komersial besar. Dengan tim yang solid dan peralatan modern, kami siap menjadi mitra terpercaya untuk kesuksesan konstruksi Anda.</p>
         </div>
         <div class="md:w-1/2 flex justify-center">
-             <img src="https://i.ibb.co/6gVfW0N/tentang-kami-hadiwijaya.jpg" alt="Tentang Kami" class="w-full rounded-lg shadow-md">
+             <img src="{{ asset('assets/img/about/about.webp') }}" alt="Tentang Kami" class="w-full rounded-lg shadow-md">
         </div>
     </div>
 </section>
