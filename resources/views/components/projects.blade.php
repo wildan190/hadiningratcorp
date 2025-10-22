@@ -95,6 +95,64 @@
                 </div>
             </div>
 
+            <!-- Biznet Tower Project Card -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 flex flex-col">
+                <div class="aspect-[4/3]">
+                    <img src="{{ asset('assets/img/proyek/biznet.webp') }}" class="w-full h-full object-cover" alt="Proyek Perkantoran “Tower Biznet”">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">Proyek Perkantoran “Tower Biznet”</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Pengerjaan pondasi bore pile untuk pembangunan gedung perkantoran 4 lantai di area pusat bisnis. Menuntut presisi tinggi karena lokasi yang padat.</p>
+                    <ul class="text-sm text-gray-700">
+                        <li class="flex items-center mb-2">
+                            <span class="font-semibold w-28">Lokasi</span>
+                            <span class="text-right flex-1">: Semarang</span>
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <span class="font-semibold w-28">Jumlah Titik</span>
+                            <span class="text-right flex-1">: 260</span>
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <span class="font-semibold w-28">Diameter</span>
+                            <span class="text-right flex-1">: Ø400 mm</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="font-semibold w-28">Kedalaman</span>
+                            <span class="text-right flex-1">: 8 meter</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BSB Golf Project Card -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 flex flex-col">
+                <div class="aspect-[4/3]">
+                    <img src="{{ asset('assets/img/proyek/bsbgolf.webp') }}" class="w-full h-full object-cover" alt="Pembangunan Fasilitas Golf Semarang “BSB Golf”">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">Pembangunan Fasilitas Golf Semarang “BSB Golf”</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Proyek pembangunan fasilitas golf pada proyek BSB Golf Semarang.</p>
+                    <ul class="text-sm text-gray-700">
+                        <li class="flex items-center mb-2">
+                            <span class="font-semibold w-28">Lokasi</span>
+                            <span class="text-right flex-1">: Semarang, Jawa Tengah</span>
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <span class="font-semibold w-28">Jumlah Titik</span>
+                            <span class="text-right flex-1">: 43</span>
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <span class="font-semibold w-28">Diameter</span>
+                            <span class="text-right flex-1">: Ø400 mm</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="font-semibold w-28">Kedalaman</span>
+                            <span class="text-right flex-1">: 5 meter</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- Cloud Core Project Card -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 flex flex-col">
                 <div class="aspect-[4/3]">
