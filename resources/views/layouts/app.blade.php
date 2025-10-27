@@ -40,6 +40,7 @@
             transform: scale(1.1);
         }
     </style>
+    @stack('styles')
 </head>
 <body class="bg-white text-brand-blue">
 
@@ -56,5 +57,6 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    @stack('scripts')
 </body>
 </html>
