@@ -1,12 +1,12 @@
 {
-    "$schema": "https://json.schemastore.org/package.json",
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "build": "vite build"
     },
     "devDependencies": {
+<<<<<<< Updated upstream
         "@tailwindcss/typography": "^0.5.19",
         "@tailwindcss/vite": "^4.0.0",
         "autoprefixer": "^10.4.15",
@@ -17,5 +17,13 @@
         "postcss-import": "^16.1.1",
         "tailwindcss": "^3.3.3",
         "vite": "^7.0.7"
+=======
+        "autoprefixer": "^10.4.12",
+        "axios": "^1.6.4",
+        "laravel-vite-plugin": "^1.0.0",
+        "postcss": "^8.4.31",
+        "tailwindcss": "^3.4.1",
+        "vite": "^5.0.0"
+>>>>>>> Stashed changes
     }
 }

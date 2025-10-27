@@ -8,7 +8,10 @@
     <x-methods />
     <x-advantages />
     <x-about />
+    <x-workflows />
     <x-projects />
+    <x-service-areas />
+    <x-testimonials />
     <x-faq />
     <x-cta />
     <x-contact />

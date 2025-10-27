@@ -37,40 +37,42 @@ Struktur perutean didefinisikan dalam `routes/web.php` dan dikelola oleh `PageCo
 
 ### 2.3. Integrasi Produk & Manajemen Data
 
-*   **Koneksi Asli (Dinonaktifkan Sementara):** Awalnya, aplikasi ini dirancang untuk mengambil data produk secara dinamis dari situs WordPress/WooCommerce (`hadiningratcorp.com`) melalui API REST. Kredensial disimpan di file `.env` (`WC_CONSUMER_KEY`, `WC_CONSUMER_SECRET`, `WC_API_URL`).
-*   **Status Saat Ini (Menggunakan Data Palsu):** Karena adanya masalah konektivitas jaringan (kemungkinan besar firewall) yang memblokir permintaan HTTP dari server hosting ke API WooCommerce, `ProductController` telah dimodifikasi untuk menggunakan **data palsu (mock data)**. Ini memungkinkan pengembangan dan pengujian frontend terus berjalan tanpa bergantung pada koneksi eksternal. **Kode asli untuk koneksi API tetap ada di dalam controller tetapi dalam keadaan dikomentari** untuk kemudahan aktivasi di masa mendatang.
+*   **Status Saat Ini (Menggunakan Data Palsu):** Karena adanya masalah konektivitas jaringan yang memblokir permintaan HTTP ke API WooCommerce eksternal, `ProductController` telah dimodifikasi untuk menggunakan **data palsu (mock data)**. Ini memungkinkan pengembangan frontend terus berjalan. Kode asli untuk koneksi API tetap ada di dalam controller tetapi dalam keadaan dikomentari.
 
 ### 2.4. Desain & Gaya Visual
 
-Desain aplikasi ini modern, bersih, dan berorientasi pada merek. Palet warna dan tipografi ditentukan dalam `tailwind.config.js` dan digunakan secara konsisten di seluruh komponen Blade.
+Desain aplikasi ini modern, bersih, dan berorientasi pada merek. Palet warna dan tipografi ditentukan dalam `tailwind.config.js`.
 
-*   **Palet Warna Utama:**
-    *   `brand-blue`: `#1E2748` (Biru tua, untuk teks utama, header, footer)
-    *   `brand-orange`: `#ED6D31` (Oranye, untuk tombol utama, aksen, dan tautan *hover*)
-*   **Tipografi:**
-    *   `font-title`: 'Poppins', sans-serif (Untuk judul utama)
-    *   `font-poppins`: 'Poppins', sans-serif (Untuk navigasi dan teks lainnya)
-    *   `font-sans`: 'Rubik', sans-serif (Teks isi utama)
+*   **Palet Warna Utama:** `brand-blue` (`#1E2748`), `brand-orange` (`#ED6D31`).
+*   **Tipografi:** 'Poppins' untuk judul dan 'Rubik' untuk teks isi.
 *   **Komponen UI Utama:**
-    *   **Header (`components/header.blade.php`):** Header mengambang (fixed) dengan latar belakang transparan (`backdrop-blur`), menu dropdown untuk layanan, dan desain responsif yang dapat diciutkan di perangkat seluler.
-    *   **Kartu Produk (`area-layanan.blade.php`):** Kartu dengan bayangan, efek *hover* (sedikit terangkat), gambar produk, judul, dan harga.
-    *   **Modal Booking (`produk-detail.blade.php`):** Modal interaktif yang ditenagai oleh Alpine.js, muncul saat tombol "Booking Sekarang" diklik. Berisi formulir untuk nama, nomor WhatsApp, dan pesan.
-    *   **Tombol WhatsApp Mengambang (`layouts/app.blade.php`):** Tombol CTA yang selalu terlihat di sudut kanan bawah untuk akses cepat ke kontak WhatsApp.
+    *   **Header (`components/header.blade.php`):** Header mengambang dengan latar belakang transparan dan menu responsif.
+    *   **Kartu Produk (`area-layanan.blade.php`):** Kartu dengan bayangan dan efek *hover*.
+    *   **Modal Booking (`produk-detail.blade.php`):** Modal interaktif yang ditenagai oleh Alpine.js untuk formulir pemesanan via WhatsApp.
+    *   **Tombol WhatsApp Mengambang (`layouts/app.blade.php`):** Tombol CTA yang selalu terlihat untuk akses cepat.
 
-### 2.5. Interaktivitas
+### 2.5. Komponen Halaman Utama yang Baru Ditambahkan
 
-*   **Navigasi:** Menu dropdown dan menu seluler menggunakan Alpine.js (`x-data`, `x-show`) untuk mengelola keadaan buka/tutup.
-*   **Formulir Booking:** Logika pengiriman formulir pada halaman detail produk diimplementasikan dalam blok `@push('scripts')`. Skrip ini mengambil data dari formulir, memformatnya menjadi pesan WhatsApp yang telah diisi sebelumnya, dan membuka tab baru untuk mengirim pesan ke nomor yang telah ditentukan.
+*   **Alur Kerja (`components/workflows.blade.php`):** Menampilkan 5 langkah proses kerja *bore pile* dalam format *timeline* visual. Komponen ini ditempatkan sebelum bagian Portofolio Proyek untuk mengedukasi klien tentang prosesnya.
+*   **Area Layanan (`components/service-areas.blade.php`):** Menampilkan peta ilustratif Jawa-Bali dan sebuah menu *dropdown* yang menautkan ke halaman layanan per kota/provinsi. Ini memberikan gambaran visual jangkauan layanan.
+*   **Testimoni (`components/testimonials.blade.php`):** Bagian ini menampilkan kartu ulasan bergaya Google Review untuk membangun kepercayaan, diikuti dengan *slider* logo klien sebagai bukti sosial.
 
-## 3. Tugas Saat Ini: Perbaikan Riwayat Git
+### 2.6. Interaktivitas
 
-Bagian ini mendokumentasikan proses perbaikan yang baru saja dilakukan untuk mengatasi masalah riwayat Git yang divergen.
+*   **Navigasi:** Menu dropdown dan menu seluler menggunakan Alpine.js (`x-data`, `x-show`).
+*   **Formulir Booking:** Logika pengiriman formulir pada halaman detail produk memformat pesan WhatsApp yang telah diisi sebelumnya.
+*   **Dropdown Area Layanan:** Menu dropdown pada komponen `service-areas` menggunakan HTML dan Tailwind CSS standar, dengan interaktivitas yang dapat ditambahkan di kemudian hari jika diperlukan.
 
-*   **Masalah:** Terjadi *merge* yang salah yang menyebabkan riwayat Git lokal berbeda secara signifikan dari repositori pusat (`origin/main`). Hal ini menyebabkan beberapa *commit* penting (fitur data palsu dan pembaruan desain) terisolasi dan tidak dapat di-*push*.
-*   **Resolusi:**
-    1.  **`git reset --hard b82aaca`**: Mengembalikan *branch* `main` lokal ke *commit* terakhir yang sama dengan repositori pusat, menghapus *merge* yang salah.
-    2.  **`git cherry-pick 7aff0f2`**: Mengambil *commit* "feat: Isolate connection issue with mock data" dan menerapkannya di atas `main` yang sudah bersih.
-    3.  **`git cherry-pick 90e1859`**: Mencoba menerapkan *commit* "update" yang berisi perubahan desain. Proses ini diinterupsi oleh beberapa konflik *merge*.
-    4.  **Resolusi Konflik Manual:** Setiap file yang berkonflik (`ProductController.php`, `area-layanan.blade.php`, `header.blade.php`, `produk-detail.blade.php`, `web.php`) dianalisis dan diperbaiki secara manual. Dalam semua kasus, versi yang benar adalah versi dari `HEAD` (perubahan kita) yang berisi fitur dan desain terbaru.
-    5.  **`git add .` & `git cherry-pick --continue`**: Setelah semua konflik diselesaikan, perubahan ditandai sebagai terselesaikan, dan proses `cherry-pick` dilanjutkan hingga tuntas.
-*   **Hasil:** Riwayat Git lokal sekarang linear, bersih, sinkron dengan `origin/main` (jika ditarik), dan berisi semua pekerjaan pengembangan terakhir. Proyek dalam keadaan stabil dan siap untuk pengembangan lebih lanjut.
+## 3. Tugas Saat Ini: Penambahan Konten Halaman Utama
+
+Bagian ini mendokumentasikan penambahan konten baru ke halaman utama berdasarkan permintaan pengguna.
+
+*   **Permintaan:** Menambahkan tiga bagian baru: "Alur Pekerjaan Bore Pile", "Area Layanan Kami", dan "Testimoni Klien Kami".
+*   **Implementasi:**
+    1.  **Pembuatan Komponen:** Karena `landing.blade.php` menggunakan arsitektur komponen, tiga komponen Blade baru dibuat:
+        *   `resources/views/components/workflows.blade.php`
+        *   `resources/views/components/service-areas.blade.php`
+        *   `resources/views/components/testimonials.blade.php`
+    2.  **Desain Komponen:** Setiap komponen diisi dengan markup HTML dan kelas Tailwind CSS untuk mencocokkan desain modern dan permintaan spesifik (misalnya, kartu ulasan gaya Google, peta, dan *timeline* proses).
+    3.  **Integrasi ke Halaman Utama:** Komponen-komponen baru tersebut kemudian ditambahkan ke file `resources/views/landing.blade.php` dalam urutan yang logis untuk alur narasi halaman.
+*   **Hasil:** Halaman utama sekarang jauh lebih informatif, memberikan pengunjung pemahaman yang lebih baik tentang proses kerja perusahaan, jangkauan layanan, dan kepercayaan pelanggan.
