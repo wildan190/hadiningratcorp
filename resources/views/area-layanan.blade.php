@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-<<<<<<< HEAD
 @section('title', 'Area Layanan - Produk Kami')
 
 @section('content')
@@ -50,39 +49,4 @@
     </div>
 </section>
 
-=======
-@section('title', 'Area Layanan')
-
-@section('content')
-<div class="bg-white">
-    <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <div class="text-center">
-            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Jelajahi Layanan Kami</h2>
-            <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-500">
-                Temukan berbagai solusi profesional yang kami tawarkan untuk kebutuhan konstruksi Anda.
-            </p>
-        </div>
-
-        <div class="mt-12 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6">
-            @if(!empty($products) && is_array($products))
-                @foreach($products as $product)
-                    <a href="{{ route('produk.show', $product['slug']) }}" class="group">
-                        <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                            <img src="{{ $product['images'][0]['src'] ?? 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg' }}" 
-                                 alt="{{ $product['name'] }}" 
-                                 class="w-full h-full object-center object-cover group-hover:opacity-75">
-                        </div>
-                        <h3 class="mt-4 text-sm text-gray-700">{{ $product['name'] }}</h3>
-                        <p class="mt-1 text-lg font-medium text-gray-900">{!! $product['price_html'] !!}</p>
-                    </a>
-                @endforeach
-            @else
-                <div class="col-span-full text-center">
-                    <p class="text-gray-500 text-lg">Saat ini belum ada layanan yang tersedia. Silakan periksa kembali nanti.</p>
-                </div>
-            @endif
-        </div>
-    </div>
-</div>
->>>>>>> 90e1859 (update)
 @endsection
