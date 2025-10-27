@@ -5,7 +5,7 @@
 @section('content')
 
 {{-- Page Header --}}
-<section class="bg-brand-blue text-white py-16">
+<section class="bg-brand-blue text-white pt-32 pb-16">
     <div class="container mx-auto text-center px-4 sm:px-6 lg:px-8">
         <h1 class="text-4xl md:text-5xl font-bold font-title">Hubungi Kami</h1>
         <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto">Kami siap membantu Anda. Isi formulir di bawah atau hubungi kami melalui detail yang tersedia.</p>
@@ -20,7 +20,7 @@
             {{-- Contact Form --}}
             <div class="order-2 lg:order-1">
                 <h2 class="text-3xl font-bold font-title text-brand-blue mb-6">Kirim Pesan</h2>
-                <form action="#" method="POST">
+                <form id="contactForm" method="POST">
                     @csrf
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                         <div>
@@ -42,7 +42,7 @@
                     </div>
                     <div>
                         <button type="submit" class="w-full bg-brand-orange hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-lg text-lg transition-all duration-300">
-                            Kirim Pesan
+                            Kirim via WhatsApp
                         </button>
                     </div>
                 </form>
@@ -101,5 +101,22 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        const template = `Halo, perkenalkan saya ${name}.\nSaya ingin bertanya mengenai:\n\n*Subjek:*\n${subject}\n\n*Pesan:*\n${message}\n\n---\n*Email saya:* ${email}\n`;
+
+        const whatsappUrl = `https://wa.me/6281325794818?text=${encodeURIComponent(template)}`;
+
+        window.open(whatsappUrl, '_blank');
+    });
+</script>
 
 @endsection

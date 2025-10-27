@@ -37,7 +37,7 @@
     </style>
 
     {{-- Hero Section --}}
-    <div class="hero-section relative text-white text-center py-24">
+    <div class="hero-section relative text-white text-center py-32">
         <div class="absolute inset-0 bg-brand-blue opacity-70"></div>
         <div class="relative px-4 sm:px-6 lg:px-8">
             <h1 class="text-4xl md:text-5xl font-bold font-title mb-4">Jasa Bore Pile Hydraulic Profesional</h1>

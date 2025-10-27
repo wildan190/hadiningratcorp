@@ -12,7 +12,7 @@
 </style>
 
 {{-- Hero Section --}}
-<section class="hero-mini-crane-section relative text-white text-center py-24">
+<section class="hero-mini-crane-section relative text-white text-center pt-40 pb-24">
     <div class="absolute inset-0 bg-brand-blue bg-opacity-80"></div>
     <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
         <h1 class="text-4xl md:text-5xl font-bold font-title mb-4">Jasa Bore Pile Mesin Mini Crane & Gawangan</h1>

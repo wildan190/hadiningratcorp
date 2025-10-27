@@ -10,21 +10,21 @@
             <!-- Kolom Kiri: Form -->
             <div class="w-full md:w-1/2 bg-white rounded-xl shadow-lg p-8 flex flex-col">
                 <h4 class="text-2xl font-bold font-title text-brand-blue mb-6">Kirim Pesan</h4>
-                <form action="#" method="POST" class="flex flex-col flex-grow">
+                <form id="landingContactForm" method="POST" class="flex flex-col flex-grow">
                     <div class="mb-4">
-                        <label for="name" class="block text-gray-600 mb-2 font-semibold">Nama</label>
-                        <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap Anda" class="w-full bg-gray-100 border border-gray-200 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-brand-orange font-rubik transition">
+                        <label for="landing_name" class="block text-gray-600 mb-2 font-semibold">Nama</label>
+                        <input type="text" id="landing_name" name="name" placeholder="Masukkan nama lengkap Anda" class="w-full bg-gray-100 border border-gray-200 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-brand-orange font-rubik transition">
                     </div>
                     <div class="mb-4">
-                        <label for="email" class="block text-gray-600 mb-2 font-semibold">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Masukkan alamat email Anda" class="w-full bg-gray-100 border border-gray-200 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-brand-orange font-rubik transition">
+                        <label for="landing_email" class="block text-gray-600 mb-2 font-semibold">Email</label>
+                        <input type="email" id="landing_email" name="email" placeholder="Masukkan alamat email Anda" class="w-full bg-gray-100 border border-gray-200 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-brand-orange font-rubik transition">
                     </div>
                     <div class="mb-6 flex-grow flex flex-col">
-                        <label for="message" class="block text-gray-600 mb-2 font-semibold">Pesan</label>
-                        <textarea id="message" name="message" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." class="w-full bg-gray-100 border border-gray-200 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-brand-orange font-rubik transition flex-grow"></textarea>
+                        <label for="landing_message" class="block text-gray-600 mb-2 font-semibold">Pesan</label>
+                        <textarea id="landing_message" name="message" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." class="w-full bg-gray-100 border border-gray-200 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-brand-orange font-rubik transition flex-grow"></textarea>
                     </div>
                     <div class="text-left">
-                        <button type="submit" class="w-full bg-brand-orange text-white font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-transform transform hover:scale-105 text-lg font-poppins">Kirim Pesan</button>
+                        <button type="submit" class="w-full bg-brand-orange text-white font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-transform transform hover:scale-105 text-lg font-poppins">Kirim via WhatsApp</button>
                     </div>
                 </form>
             </div>
@@ -71,3 +71,19 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.getElementById('landingContactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('landing_name').value;
+        const email = document.getElementById('landing_email').value;
+        const message = document.getElementById('landing_message').value;
+
+        const template = `Halo, perkenalkan saya ${name}.\nSaya ingin bertanya mengenai layanan Hadiwijaya Bore Pile.\n\n*Pesan:*\n${message}\n\n---\n*Email saya:* ${email}\n`;
+
+        const whatsappUrl = `https://wa.me/6281325794818?text=${encodeURIComponent(template)}`;
+
+        window.open(whatsappUrl, '_blank');
+    });
+</script>

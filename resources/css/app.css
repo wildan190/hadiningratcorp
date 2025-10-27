@@ -1,11 +1,59 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    @apply font-bold font-title text-brand-blue mb-4;
+}
+
+.prose h1 {
+    @apply text-3xl;
+}
+
+.prose h2 {
+    @apply text-2xl;
+}
+
+.prose h3 {
+    @apply text-xl;
+}
+
+.prose p {
+    @apply mb-4;
+}
+
+.prose ul {
+    @apply list-disc list-inside mb-4 pl-4;
+}
+
+.prose ol {
+    @apply list-decimal list-inside mb-4 pl-4;
+}
+
+.prose li {
+    @apply mb-2;
+}
+
+.prose table {
+    @apply w-full my-4 border-collapse border border-gray-300;
+}
+
+.prose th,
+.prose td {
+    @apply border border-gray-300 px-4 py-2 text-left;
+}
+
+.prose th {
+    @apply bg-gray-100 font-bold;
+}
+
+.prose img {
+    @apply max-w-full h-auto rounded-lg shadow-md my-4;
 }
