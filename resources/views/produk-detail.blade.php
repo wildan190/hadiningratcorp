@@ -15,56 +15,63 @@
     {{-- Product Details --}}
     <section class="bg-white">
         <div class="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                
-                {{-- Product Gallery --}}
-                <div>
-                    @if(!empty($product['images']))
-                        <div class="mb-4">
-                            <img src="{{ $product['images'][0]['src'] }}" alt="{{ $product['name'] }}" class="w-full rounded-lg shadow-lg">
+            <div class="grid grid-cols-1 gap-12">
+                <!-- Description Section -->
+                <div class="prose prose-lg max-w-none">
+                    <h2 class="text-3xl font-bold font-title text-brand-blue mb-6">Deskripsi Produk</h2>
+                    <div class="prose-headings:font-bold prose-headings:text-brand-blue prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-h4:text-lg prose-p:text-gray-600 prose-strong:text-brand-blue prose-ul:list-disc prose-ol:list-decimal prose-li:text-gray-600">
+                        {!! $product['description'] !!}
+                    </div>
+                </div>
+
+                <!-- Product Gallery and Info -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    {{-- Product Gallery --}}
+                    <div>
+                        @if(!empty($product['images']))
+                            <div class="mb-4">
+                                <img src="{{ $product['images'][0]['src'] }}" alt="{{ $product['name'] }}" class="w-full rounded-lg shadow-lg">
+                            </div>
+                            {{-- Thumbnail gallery --}}
+                            @if(count($product['images']) > 1)
+                                <div class="grid grid-cols-4 gap-4">
+                                    @foreach($product['images'] as $image)
+                                        <img src="{{ $image['src'] }}" alt="{{ $product['name'] }}" class="w-full h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-brand-orange">
+                                    @endforeach
+                                </div>
+                            @endif
+                        @else
+                            <div class="w-full h-96 bg-gray-200 flex items-center justify-center rounded-lg">
+                                <span class="text-gray-500">Gambar tidak tersedia</span>
+                            </div>
+                        @endif
+                    </div>
+
+                    {{-- Product Info --}}
+                    <div>
+                        <div class="text-3xl font-bold text-brand-orange mb-6">
+                            {!! $product['price_html'] !!}
                         </div>
-                        {{-- Thumbnail gallery --}}
-                        @if(count($product['images']) > 1)
-                            <div class="grid grid-cols-4 gap-4">
-                                @foreach($product['images'] as $image)
-                                    <img src="{{ $image['src'] }}" alt="{{ $product['name'] }}" class="w-full h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-brand-orange">
+
+                        <div class="mt-8 mb-8">
+                            <button @click="bookingModal = true" type="button" class="inline-block bg-brand-orange hover:bg-opacity-90 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+                                Booking Sekarang
+                            </button>
+                        </div>
+
+                        @if(!empty($product['categories']))
+                            <div class="mt-8 text-sm text-gray-500">
+                                <strong>Kategori:</strong>
+                                @foreach($product['categories'] as $category)
+                                    <span>{{ $category['name'] }}</span>@if(!$loop->last), @endif
                                 @endforeach
                             </div>
                         @endif
-                    @else
-                        <div class="w-full h-96 bg-gray-200 flex items-center justify-center rounded-lg">
-                            <span class="text-gray-500">Gambar tidak tersedia</span>
-                        </div>
-                    @endif
+                    </div>
                 </div>
-
-                {{-- Product Info --}}
-                <div>
-                    <div class="text-3xl font-bold text-brand-orange mb-6">
-                        {!! $product['price_html'] !!}
-                    </div>
-
-                    <div class="mt-8 mb-8">
-                        <button @click="bookingModal = true" type="button" class="inline-block bg-brand-orange hover:bg-opacity-90 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
-                            Booking Sekarang
-                        </button>
-                    </div>
-
-                    @if(!empty($product['categories']))
-                        <div class="mt-8 text-sm text-gray-500">
-                            <strong>Kategori:</strong>
-                            @foreach($product['categories'] as $category)
-                                <span>{{ $category['name'] }}</span>@if(!$loop->last), @endif
-                            @endforeach
-                        </div>
-                    @endif
-
-                    <h2 class="text-3xl font-bold font-title text-brand-blue mb-4 mt-8">Deskripsi Produk</h2>
-                    <div class="prose max-w-none text-gray-600 mb-6">
-                        {!! $product['description'] !!}
-                    </div>
-
-                </div>
+            </div>
+        </div>
+    </section>
             </div>
         </div>
     </section>
